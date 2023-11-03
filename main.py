@@ -64,14 +64,18 @@ class Human:
             self.gladness += 10
             self.satiety += 2
     def chill(self):
-        pass
+        self.mess += 5
+        self.gladness += 10
     def clean_home(self):
-        pass
+        self.mess = 0
+        self.gladness -= 5
     def to_repair(self):
-        pass
+            self.car.strength += 100
+            self.money -= 50
+            print("My car is repaired")
     def day_indexes(self, day):
         day = f"Today the {day} of {self.name}'s life"
-        print(f"{day:=^50:}", '\n')
+        print(f"{day:=^50}", '\n')
         human_indexes = self.name + "'s indexes"
         print(f"{human_indexes:^50}", '\n')
         print(f"Money - {self.money}")
@@ -106,7 +110,7 @@ class Human:
         if self.job is None:
             self.get_job()
             print(f"I don't have a job, I'm going to get a job {self.job.job} with salary {self.job.salary}")
-        self.days_indexes(day)
+        self.day_indexes(day)
 
 
 
